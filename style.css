@@ -1,167 +1,180 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  background: linear-gradient(to bottom, #87CEEB, #ffffff);
-  margin: 0;
-  overflow: hidden;
+    background: linear-gradient(to bottom, #7ecafc, #ffffff);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* Snowman */
-.snowman {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  margin-bottom: 50px;
-}
-
-.circle {
-  background: white;
-  border-radius: 50%;
-  border: 2px solid #ddd;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  margin: -10px 0; /* Adjust overlap between circles */
-}
-
-.circle.large {
-  width: 150px;
-  height: 150px;
-}
-
-.circle.medium {
-  width: 100px;
-  height: 100px;
-}
-
-.circle.small {
-  width: 60px;
-  height: 60px;
-}
-
-.snowman .eyes {
-  position: relative;
-  top: 15px;
-}
-
-.eye {
-  width: 10px;
-  height: 10px;
-  background: black;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.eye.left {
-  left: -15px;
-}
-
-.eye.right {
-  left: 15px;
-}
-
-.snowman .nose {
-  width: 10px;
-  height: 10px;
-  background: orange;
-  clip-path: polygon(0% 50%, 100% 50%, 50% 100%);
-  position: relative;
-  top: 30px;
-}
-
-.snowman .buttons {
-  position: relative;
-  top: 10px;
-}
-
-.button {
-  width: 10px;
-  height: 10px;
-  background: black;
-  border-radius: 50%;
-  margin: 5px 0;
+.scene {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
 }
 
 /* Christmas Tree */
 .tree {
-  position: relative;
-  margin-top: 50px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+    position: relative;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 75px solid transparent;
-  border-right: 75px solid transparent;
-  border-bottom: 100px solid green;
-  margin-bottom: -40px;
+.branch {
+    position: relative;
+    width: 0;
+    height: 0;
+    margin-bottom: -40px;
+    border-style: solid;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
 }
 
-.triangle:nth-child(2) {
-  border-bottom: 120px solid green;
+.branch-top {
+    border-bottom: 80px solid #228b22;
 }
 
-.triangle:nth-child(3) {
-  border-bottom: 140px solid green;
+.branch-middle {
+    border-bottom: 100px solid #228b22;
+    margin-top: -10px;
+}
+
+.branch-bottom {
+    border-bottom: 120px solid #228b22;
+    margin-top: -15px;
 }
 
 .trunk {
-  width: 40px;
-  height: 60px;
-  background: brown;
-  margin-top: -20px;
+    width: 40px;
+    height: 60px;
+    background: #8b4513;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Tree Decorations */
+.decor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.star {
+    width: 30px;
+    height: 30px;
+    background: gold;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .ornament {
-  width: 15px;
-  height: 15px;
-  background: red;
-  border-radius: 50%;
-  position: absolute;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background: red;
 }
 
-.ornament:nth-child(1) {
-  top: -40px;
-  left: 0;
+.or-red {
+    top: 30px;
+    left: 20px;
+    background: red;
 }
 
-.ornament:nth-child(2) {
-  top: -10px;
-  right: 20px;
+.or-blue {
+    top: 50px;
+    right: 25px;
+    background: blue;
 }
 
-.ornament:nth-child(3) {
-  top: 40px;
-  left: -20px;
+.or-yellow {
+    top: 80px;
+    left: 35px;
+    background: yellow;
 }
 
-.ornament:nth-child(4) {
-  top: 80px;
-  right: 0;
+.or-green {
+    top: 90px;
+    right: 40px;
+    background: green;
 }
 
-/* Extras */
-.star {
-  position: absolute;
-  top: -90px;
-  width: 30px;
-  height: 30px;
-  background: gold;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+/* Snowman */
+.snowman {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.ground {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background: #f9f9f9;
-  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.1);
+.snowball {
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.large {
+    width: 120px;
+    height: 120px;
+}
+
+.medium {
+    width: 90px;
+    height: 90px;
+    margin-top: -15px;
+}
+
+.small {
+    width: 60px;
+    height: 60px;
+    margin-top: -10px;
+    position: relative;
+}
+
+/* Snowman Face */
+.face {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.eye {
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.eye.left {
+    left: -10px;
+}
+
+.eye.right {
+    right: -10px;
+}
+
+.nose {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 10px 5px 0;
+    border-color: transparent orange transparent transparent;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
