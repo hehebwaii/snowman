@@ -1,0 +1,189 @@
+.snowman {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  animation: snowman-jiggle 2s infinite; 
+}
+
+@keyframes snowman-jiggle {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.snowman .head {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.snowman .middle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+
+.snowman .bottom {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 120px;
+  left: 20px;
+}
+
+.snowman .eyes {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 35px;
+}
+
+.snowman .right-eye {
+  left: 65px;
+}
+
+.snowman .nose {
+  width: 10px;
+  height: 20px;
+  background-color: orange;
+  position: absolute;
+  top: 45px;
+  left: 45px;
+  transform: rotate(45deg);
+}
+
+.snowman .mouth {
+  width: 20px;
+  height: 5px;
+  background-color: black;
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  border-radius: 5px;
+}
+
+.snowman .hat {
+  width: 60px;
+  height: 40px;
+  background-color: red;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  transform: skewX(-20deg);
+}
+
+.tree {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid green;
+  position: relative;
+  animation: tree-shake 3s infinite;
+}
+
+@keyframes tree-shake {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(3deg); }
+  20% { transform: rotate(-3deg); }
+  30% { transform: rotate(2deg); }
+  40% { transform: rotate(-2deg); }
+  50% { transform: rotate(1deg); }
+  60% { transform: rotate(-1deg); }
+  70% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.tree::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -20px;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 60px solid green;
+}
+
+.tree::after {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid green;
+}
+
+.star {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid yellow;
+  position: absolute;
+  top: -90px;
+  left: -10px;
+  animation: star-twinkle 1s infinite;
+}
+
+@keyframes star-twinkle {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.ornament1 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  animation: ornament-swing 1.5s infinite;
+}
+
+@keyframes ornament-swing {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.ornament2 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  top: 50px;
+  left: -20px;
+  animation: ornament-swing 1.2s infinite; 
+}
+
+.ornament3 {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: gold;
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  animation: ornament-swing 1.8s infinite; 
+}
